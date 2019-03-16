@@ -1,0 +1,22 @@
+Convert a .png coloured image to monochrome by manipulating the pixel
+values and not by using inbuilt functions.
+____________________________________________________________________________________________________________________________________________
+
+_____________________________________________________PYTHON_________________________________________________________________________________
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+def rgb2gray(rgb):
+    return np.dot(rgb[...,:3], [0.299, 0.587, 0.114])
+
+img = mpimg.imread('G:\protosem\class notes\python\images\crocodile.jpg')     
+gray = rgb2gray(img)    
+print(gray)
+plt.imshow(gray, cmap = plt.get_cmap('gray'))
+plt.show()
+
+
+
+________________________________________________________________________________________________________________________________________________
+
